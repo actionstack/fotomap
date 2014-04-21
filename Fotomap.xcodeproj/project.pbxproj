@@ -19,6 +19,9 @@
 		26F47E8619051835003766BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F47E6E19051835003766BE /* UIKit.framework */; };
 		26F47E8E19051835003766BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26F47E8C19051835003766BE /* InfoPlist.strings */; };
 		26F47E9019051835003766BE /* FotomapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F47E8F19051835003766BE /* FotomapTests.m */; };
+		26F47E9C19051CF6003766BE /* FTMPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F47E9B19051CF6003766BE /* FTMPHomeViewController.m */; };
+		26F47EA2190520B5003766BE /* UIScreen+FTMP.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F47EA1190520B5003766BE /* UIScreen+FTMP.m */; };
+		26F47EAB190527B6003766BE /* UIView+FTMP.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F47EAA190527B6003766BE /* UIView+FTMP.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,12 @@
 		26F47E8B19051835003766BE /* FotomapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FotomapTests-Info.plist"; sourceTree = "<group>"; };
 		26F47E8D19051835003766BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26F47E8F19051835003766BE /* FotomapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FotomapTests.m; sourceTree = "<group>"; };
+		26F47E9A19051CF6003766BE /* FTMPHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTMPHomeViewController.h; sourceTree = "<group>"; };
+		26F47E9B19051CF6003766BE /* FTMPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTMPHomeViewController.m; sourceTree = "<group>"; };
+		26F47EA0190520B5003766BE /* UIScreen+FTMP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+FTMP.h"; sourceTree = "<group>"; };
+		26F47EA1190520B5003766BE /* UIScreen+FTMP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+FTMP.m"; sourceTree = "<group>"; };
+		26F47EA9190527B6003766BE /* UIView+FTMP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FTMP.h"; sourceTree = "<group>"; };
+		26F47EAA190527B6003766BE /* UIView+FTMP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FTMP.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +116,8 @@
 		26F47E7019051835003766BE /* Fotomap */ = {
 			isa = PBXGroup;
 			children = (
+				26F47E9F19051F66003766BE /* Categories */,
+				26F47E9919051A94003766BE /* View Controllers */,
 				26F47E7919051835003766BE /* FTMPAppDelegate.h */,
 				26F47E7A19051835003766BE /* FTMPAppDelegate.m */,
 				26F47E7C19051835003766BE /* Images.xcassets */,
@@ -142,6 +153,26 @@
 				26F47E8C19051835003766BE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26F47E9919051A94003766BE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				26F47E9A19051CF6003766BE /* FTMPHomeViewController.h */,
+				26F47E9B19051CF6003766BE /* FTMPHomeViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		26F47E9F19051F66003766BE /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				26F47EA0190520B5003766BE /* UIScreen+FTMP.h */,
+				26F47EA1190520B5003766BE /* UIScreen+FTMP.m */,
+				26F47EA9190527B6003766BE /* UIView+FTMP.h */,
+				26F47EAA190527B6003766BE /* UIView+FTMP.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +271,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26F47E9C19051CF6003766BE /* FTMPHomeViewController.m in Sources */,
 				26F47E7719051835003766BE /* main.m in Sources */,
+				26F47EA2190520B5003766BE /* UIScreen+FTMP.m in Sources */,
+				26F47EAB190527B6003766BE /* UIView+FTMP.m in Sources */,
 				26F47E7B19051835003766BE /* FTMPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
