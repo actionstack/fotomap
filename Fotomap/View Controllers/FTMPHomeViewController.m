@@ -30,6 +30,10 @@ static NSString * const kCellIdentifier = @"Cell";
 {
     [super viewDidLoad];
     
+    // Set the screen title.
+    self.title = @"Fotomap";
+    
+    // Initialize an ALAssetsLibrary instance.
     self.library = [[ALAssetsLibrary alloc] init];
     
     // Register a collection view cell class and an identifier.
@@ -178,6 +182,9 @@ static NSString * const kCellIdentifier = @"Cell";
                                              collectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
+        
+        // A collection view's default background is black, so let's change it.
+        _collectionView.backgroundColor = [UIColor lightGrayColor];
     }
     return _collectionView;
 }
