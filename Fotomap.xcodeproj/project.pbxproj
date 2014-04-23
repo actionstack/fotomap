@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26DD42C31907AE290077439B /* FTMPImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD42C21907AE290077439B /* FTMPImageViewController.m */; };
 		26F47E6B19051835003766BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F47E6A19051835003766BE /* Foundation.framework */; };
 		26F47E6D19051835003766BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F47E6C19051835003766BE /* CoreGraphics.framework */; };
 		26F47E6F19051835003766BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F47E6E19051835003766BE /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26DD42C11907AE290077439B /* FTMPImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTMPImageViewController.h; sourceTree = "<group>"; };
+		26DD42C21907AE290077439B /* FTMPImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTMPImageViewController.m; sourceTree = "<group>"; };
 		26F47E6719051835003766BE /* Fotomap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fotomap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F47E6A19051835003766BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26F47E6C19051835003766BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -160,6 +163,8 @@
 			children = (
 				26F47E9A19051CF6003766BE /* FTMPHomeViewController.h */,
 				26F47E9B19051CF6003766BE /* FTMPHomeViewController.m */,
+				26DD42C11907AE290077439B /* FTMPImageViewController.h */,
+				26DD42C21907AE290077439B /* FTMPImageViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26F47E9C19051CF6003766BE /* FTMPHomeViewController.m in Sources */,
+				26DD42C31907AE290077439B /* FTMPImageViewController.m in Sources */,
 				26F47E7719051835003766BE /* main.m in Sources */,
 				26F47EA2190520B5003766BE /* UIScreen+FTMP.m in Sources */,
 				26F47EAB190527B6003766BE /* UIView+FTMP.m in Sources */,
@@ -472,6 +478,7 @@
 				26F47E9519051835003766BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26F47E9619051835003766BE /* Build configuration list for PBXNativeTarget "FotomapTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +487,7 @@
 				26F47E9819051835003766BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

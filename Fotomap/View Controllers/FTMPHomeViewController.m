@@ -11,6 +11,9 @@
 // Frameworks
 #import <AssetsLibrary/AssetsLibrary.h>
 
+// View controllers
+#import "FTMPImageViewController.h"
+
 static NSString * const kCellIdentifier = @"Cell";
 
 @interface FTMPHomeViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
@@ -39,9 +42,8 @@ static NSString * const kCellIdentifier = @"Cell";
     // Register a collection view cell class and an identifier.
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:kCellIdentifier];
     
-    // Set a content inset of 64 so that the cells aren't hidden under
-    // the status bar (20) and the navigation bar (44);
-    self.collectionView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+    // Set which edges to extend for the translucent top and bottom bars.
+    self.edgesForExtendedLayout = UIRectEdgeTop;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -59,7 +61,7 @@ static NSString * const kCellIdentifier = @"Cell";
         
         __weak FTMPHomeViewController *weakSelf = self;
         
-        [self.library enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+        [self.library enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
             // Create block-level strong reference to self.
             FTMPHomeViewController *innerSelf = weakSelf;
             
@@ -98,6 +100,13 @@ static NSString * const kCellIdentifier = @"Cell";
     else {
         
     }
+}
+
+- (void)viewDidLayoutSubviews
+{
+    // Set a content inset so that the cells aren't hidden
+    // under the status bar and navigation bar.
+    self.collectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuide.length, 0, 0, 0);
 }
 
 #pragma mark - Collection view data source
@@ -149,6 +158,16 @@ static NSString * const kCellIdentifier = @"Cell";
 }
 
 #pragma mark - Collection view delegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Instantiate the next screen.
+    FTMPImageViewController *imageViewController = [[FTMPImageViewController alloc] init];
+    imageViewController.asset = self.assets[indexPath.row];
+    
+    // Push the next screen to the navigation controller.
+    [self.navigationController pushViewController:imageViewController animated:YES];
+}
 
 #pragma mark - Collection view flow layout
 
