@@ -13,5 +13,6 @@
 @interface FTMPImageViewController : UIViewController
 
 @property (strong, nonatomic) ALAsset *asset;
+@property (nonatomic) NSUInteger assetIndex;
 
 @end

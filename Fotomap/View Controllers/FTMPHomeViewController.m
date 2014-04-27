@@ -12,7 +12,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 
 // View controllers
-#import "FTMPImageViewController.h"
+#import "FTMPScrollViewController.h"
 
 static NSString * const kCellIdentifier = @"Cell";
 
@@ -161,12 +161,18 @@ static NSString * const kCellIdentifier = @"Cell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Instantiate the next screen.
-    FTMPImageViewController *imageViewController = [[FTMPImageViewController alloc] init];
-    imageViewController.asset = self.assets[indexPath.row];
+//    // Instantiate the next screen.
+//    FTMPImageViewController *imageViewController = [[FTMPImageViewController alloc] init];
+//    imageViewController.asset = self.assets[indexPath.row];
+//    
+//    // Push the next screen to the navigation controller.
+//    [self.navigationController pushViewController:imageViewController animated:YES];
     
-    // Push the next screen to the navigation controller.
-    [self.navigationController pushViewController:imageViewController animated:YES];
+    FTMPScrollViewController *scrollViewController = [[FTMPScrollViewController alloc] init];
+    scrollViewController.assets = self.assets;
+    scrollViewController.startingIndex = indexPath.row;
+    
+    [self.navigationController pushViewController:scrollViewController animated:YES];
 }
 
 #pragma mark - Collection view flow layout
