@@ -35,6 +35,7 @@
     // Add the initial page.
     FTMPImageViewController *imageViewController = [[FTMPImageViewController alloc] init];
     imageViewController.asset = self.assets[self.startingIndex];
+    imageViewController.assetIndex = self.startingIndex;
     [self.pageViewController setViewControllers:@[imageViewController]
                                       direction:UIPageViewControllerNavigationDirectionForward
                                        animated:NO

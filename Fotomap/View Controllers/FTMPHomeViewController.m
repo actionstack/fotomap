@@ -16,14 +16,13 @@
 
 @interface FTMPHomeViewController ()
 
-@property (strong, nonatomic) UITabBarController *tabBarController;
-
 @property (strong, nonatomic) ALAssetsLibrary *library;
 @property (strong, nonatomic) NSMutableArray *assets;
 
-//@property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic) UITabBarController *tabBarController;
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) UILabel *errorLabel;
+@property (strong, nonatomic) UISegmentedControl *segmentedControl;
 
 @end
 
@@ -38,9 +37,6 @@
     
     // Initialize an ALAssetsLibrary instance.
     self.library = [[ALAssetsLibrary alloc] init];
-    
-    // Set which edges to extend for the translucent top and bottom bars.
-    self.edgesForExtendedLayout = UIRectEdgeTop;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -79,6 +75,10 @@
                 [innerSelf addChildViewController:innerSelf.tabBarController];
                 [innerSelf.view addSubview:innerSelf.tabBarController.view];
                 [innerSelf.tabBarController didMoveToParentViewController:innerSelf];
+                
+                UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [UIScreen height] - 44, [UIScreen width], 44)];
+                [toolbar addSubview:innerSelf.segmentedControl];
+                [innerSelf.view addSubview:toolbar];
                 return;
             }
             
@@ -109,6 +109,15 @@
 }
 
 #pragma mark - Lazy initializers
+
+- (UISegmentedControl *)segmentedControl
+{
+    if (!_segmentedControl) {
+        _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Tile", @"Map"]];
+        _segmentedControl.frame = CGRectMake(20, 7, [UIScreen width] - 40, 30);
+    }
+    return _segmentedControl;
+}
 
 - (UIActivityIndicatorView *)activityIndicator
 {

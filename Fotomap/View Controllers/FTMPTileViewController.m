@@ -30,6 +30,9 @@ static NSString * const kCellIdentifier = @"Cell";
     
     // Register a collection view cell class and an identifier.
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:kCellIdentifier];
+    
+    // Set which edges to extend for the translucent top and bottom bars.
+    self.edgesForExtendedLayout = UIRectEdgeTop|UIRectEdgeBottom;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -45,7 +48,7 @@ static NSString * const kCellIdentifier = @"Cell";
 {
     // Set a content inset so that the cells aren't hidden
     // under the status bar and navigation bar.
-    self.collectionView.contentInset = UIEdgeInsetsMake(self.tabBarController.topLayoutGuide.length, 0, 0, 0);
+    self.collectionView.contentInset = UIEdgeInsetsMake(self.tabBarController.topLayoutGuide.length, 0, 44, 0);
 }
 
 #pragma mark - Collection view data source
