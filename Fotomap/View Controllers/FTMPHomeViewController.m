@@ -13,6 +13,7 @@
 
 // View controllers
 #import "FTMPTileViewController.h"
+#import "FTMPMapViewController.h"
 
 @interface FTMPHomeViewController ()
 
@@ -67,9 +68,12 @@
                 // Set up the tab bar controller.
                 FTMPTileViewController *tileViewController = [[FTMPTileViewController alloc] init];
                 tileViewController.assets = innerSelf.assets;
+                
+                FTMPMapViewController *mapViewController = [[FTMPMapViewController alloc] init];
+                
                 innerSelf.tabBarController = [[UITabBarController alloc] init];
                 innerSelf.tabBarController.tabBar.hidden = YES;
-                innerSelf.tabBarController.viewControllers = @[tileViewController];
+                innerSelf.tabBarController.viewControllers = @[tileViewController, mapViewController];
                 
                 // Add the tab bar controller to the view.
                 [innerSelf addChildViewController:innerSelf.tabBarController];
@@ -108,6 +112,13 @@
     }
 }
 
+#pragma mark - Target actions
+
+- (void)segmentedControlChanged
+{
+    self.tabBarController.selectedIndex = self.segmentedControl.selectedSegmentIndex;
+}
+
 #pragma mark - Lazy initializers
 
 - (UISegmentedControl *)segmentedControl
@@ -115,6 +126,12 @@
     if (!_segmentedControl) {
         _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Tile", @"Map"]];
         _segmentedControl.frame = CGRectMake(20, 7, [UIScreen width] - 40, 30);
+        
+        // Select the first segment by default.
+        _segmentedControl.selectedSegmentIndex = 0;
+        
+        // Set which method gets invoked when the segmented control changes selection.
+        [_segmentedControl addTarget:self action:@selector(segmentedControlChanged) forControlEvents:UIControlEventValueChanged];
     }
     return _segmentedControl;
 }

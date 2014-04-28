@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		261A81C4190E484900802095 /* FTMPTileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 261A81C3190E484900802095 /* FTMPTileViewController.m */; };
+		261A81C7190E5D8900802095 /* FTMPMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 261A81C6190E5D8900802095 /* FTMPMapViewController.m */; };
+		261A81C9190E5DCA00802095 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261A81C8190E5DCA00802095 /* MapKit.framework */; };
 		26DD42C31907AE290077439B /* FTMPImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD42C21907AE290077439B /* FTMPImageViewController.m */; };
 		26EA7AB0190D019A00D3DF27 /* FTMPScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EA7AAF190D019A00D3DF27 /* FTMPScrollViewController.m */; };
 		26F47E6B19051835003766BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F47E6A19051835003766BE /* Foundation.framework */; };
@@ -40,6 +42,9 @@
 /* Begin PBXFileReference section */
 		261A81C2190E484900802095 /* FTMPTileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTMPTileViewController.h; sourceTree = "<group>"; };
 		261A81C3190E484900802095 /* FTMPTileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTMPTileViewController.m; sourceTree = "<group>"; };
+		261A81C5190E5D8900802095 /* FTMPMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTMPMapViewController.h; sourceTree = "<group>"; };
+		261A81C6190E5D8900802095 /* FTMPMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTMPMapViewController.m; sourceTree = "<group>"; };
+		261A81C8190E5DCA00802095 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		26DD42C11907AE290077439B /* FTMPImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTMPImageViewController.h; sourceTree = "<group>"; };
 		26DD42C21907AE290077439B /* FTMPImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTMPImageViewController.m; sourceTree = "<group>"; };
 		26EA7AAE190D019A00D3DF27 /* FTMPScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTMPScrollViewController.h; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				261A81C9190E5DCA00802095 /* MapKit.framework in Frameworks */,
 				26F47E6D19051835003766BE /* CoreGraphics.framework in Frameworks */,
 				26F47E6F19051835003766BE /* UIKit.framework in Frameworks */,
 				26F47E6B19051835003766BE /* Foundation.framework in Frameworks */,
@@ -114,6 +120,7 @@
 		26F47E6919051835003766BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				261A81C8190E5DCA00802095 /* MapKit.framework */,
 				26F47E6A19051835003766BE /* Foundation.framework */,
 				26F47E6C19051835003766BE /* CoreGraphics.framework */,
 				26F47E6E19051835003766BE /* UIKit.framework */,
@@ -175,6 +182,8 @@
 				26EA7AAF190D019A00D3DF27 /* FTMPScrollViewController.m */,
 				261A81C2190E484900802095 /* FTMPTileViewController.h */,
 				261A81C3190E484900802095 /* FTMPTileViewController.m */,
+				261A81C5190E5D8900802095 /* FTMPMapViewController.h */,
+				261A81C6190E5D8900802095 /* FTMPMapViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -290,6 +299,7 @@
 				26EA7AB0190D019A00D3DF27 /* FTMPScrollViewController.m in Sources */,
 				26DD42C31907AE290077439B /* FTMPImageViewController.m in Sources */,
 				26F47E7719051835003766BE /* main.m in Sources */,
+				261A81C7190E5D8900802095 /* FTMPMapViewController.m in Sources */,
 				26F47EA2190520B5003766BE /* UIScreen+FTMP.m in Sources */,
 				26F47EAB190527B6003766BE /* UIView+FTMP.m in Sources */,
 				26F47E7B19051835003766BE /* FTMPAppDelegate.m in Sources */,
