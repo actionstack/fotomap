@@ -10,10 +10,12 @@
 
 // Frameworks
 #import <MapKit/MapKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
-@interface FTMPMapViewController ()
+@interface FTMPMapViewController () <MKMapViewDelegate>
 
 @property (strong, nonatomic) MKMapView *mapView;
+@property (strong, nonatomic) NSMutableArray *points;
 
 @end
 
@@ -26,6 +28,29 @@
     // Add the map view as a subview if it hasn't been added yet.
     if (![self.view.subviews containsObject:self.mapView]) {
         [self.view addSubview:self.mapView];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // Only enumerate the points if they haven't been yet.
+    if (self.points == nil) {
+        self.points = [NSMutableArray array];
+        
+        ALAsset *asset;
+        CLLocation *location;
+        for (int i = 0; i < self.assets.count; i++) {
+            asset = self.assets[i];
+            location = [asset valueForProperty:ALAssetPropertyLocation];
+            
+            MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+            point.coordinate = location.coordinate;
+            [self.points addObject:point];
+        }
+        
+        [self.mapView addAnnotations:[NSArray arrayWithArray:self.points]];
     }
 }
 

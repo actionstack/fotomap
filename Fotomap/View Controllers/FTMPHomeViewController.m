@@ -70,6 +70,7 @@
                 tileViewController.assets = innerSelf.assets;
                 
                 FTMPMapViewController *mapViewController = [[FTMPMapViewController alloc] init];
+                mapViewController.assets = innerSelf.assets;
                 
                 innerSelf.tabBarController = [[UITabBarController alloc] init];
                 innerSelf.tabBarController.tabBar.hidden = YES;

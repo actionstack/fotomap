@@ -10,4 +10,6 @@
 
 @interface FTMPMapViewController : UIViewController
 
+@property (strong, nonatomic) NSMutableArray *assets;
+
 @end
