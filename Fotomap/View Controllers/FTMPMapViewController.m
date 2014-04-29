@@ -54,12 +54,31 @@
     }
 }
 
+#pragma mark - Map view delegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    // Get the asset for which this annotation is a pin.
+    NSUInteger indexOfAnnotation = [self.points indexOfObject:annotation];
+    ALAsset *asset = self.assets[indexOfAnnotation];
+    
+    // Use the asset's thumbnail as the view's image.
+    MKAnnotationView *view = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Annotation"];
+    view.image = [UIImage imageWithCGImage:[asset thumbnail]];
+    
+    // Make the annotation view 60 points by 60.
+    view.frame = CGRectMake(0, 0, 60, 60);
+    
+    return view;
+}
+
 #pragma mark - Lazy initializers
 
 - (MKMapView *)mapView
 {
     if (!_mapView) {
         _mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen width], [UIScreen height])];
+        _mapView.delegate = self;
     }
     return _mapView;
 }
