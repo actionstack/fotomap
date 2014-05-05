@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class ALAsset;
+
 @interface FTMPMapViewController : UIViewController
 
-@property (strong, nonatomic) NSMutableArray *assets;
+@property (weak, nonatomic) NSMutableArray *assets;
+
+- (void)addAnnotationForAssetAndRefresh:(ALAsset *)asset;
 
 @end

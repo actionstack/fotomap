@@ -54,6 +54,16 @@
     }
 }
 
+- (void)addAnnotationForAssetAndRefresh:(ALAsset *)asset
+{
+    CLLocation *location = [asset valueForProperty:ALAssetPropertyLocation];
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = location.coordinate;
+    
+    [self.points addObject:point];
+    [self.mapView addAnnotation:point];
+}
+
 #pragma mark - Map view delegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation

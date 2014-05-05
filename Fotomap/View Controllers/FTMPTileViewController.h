@@ -10,6 +10,7 @@
 
 @interface FTMPTileViewController : UIViewController
 
-@property (strong, nonatomic) NSMutableArray *assets;
+@property (weak, nonatomic) NSMutableArray *assets;
+@property (strong, nonatomic, readonly) UICollectionView *collectionView;
 
 @end

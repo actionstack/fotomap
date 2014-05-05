@@ -18,7 +18,7 @@ static NSString * const kCellIdentifier = @"Cell";
 
 @interface FTMPTileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
-@property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic, readwrite) UICollectionView *collectionView;
 
 @end
 
