@@ -171,10 +171,8 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     
     // Save the image in the photo library.
-    
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     __weak FTMPHomeViewController *weakSelf = self;
-    
     [self.library writeImageToSavedPhotosAlbum:image.CGImage metadata:info[UIImagePickerControllerMediaMetadata] completionBlock:^(NSURL *assetURL, NSError *error) {
         if (error) {
             [[[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
@@ -199,32 +197,7 @@
             [[[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }];
     }];
-    
-//    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
-
-//- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
-//{
-//    if (error) {
-
-//    }
-//    
-//    // If no error happened, just re-enumerate the assets and refresh the tile and map view controllers.
-//    
-//    __weak FTMPHomeViewController *weakSelf = self;
-//    [self enumeratePhotoAssetsWithSuccessBlock:^{
-//        FTMPHomeViewController *innerSelf = weakSelf;
-//        
-//        // Re-assign the assets arrays of every view controller before refreshing them
-//        // so that the data sources are updated.
-//        
-//        innerSelf.tileViewController.assets = innerSelf.assets;
-//        [innerSelf.tileViewController refresh];
-//        
-//        innerSelf.mapViewController.assets = innerSelf.assets;
-//        [innerSelf.mapViewController refresh];
-//    } failureBlock:nil];
-//}
 
 #pragma mark - Lazy initializers
 

@@ -12,6 +12,9 @@
 #import <MapKit/MapKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
+// App delegate
+#import "FTMPAppDelegate.h"
+
 @interface FTMPMapViewController () <MKMapViewDelegate>
 
 @property (strong, nonatomic) MKMapView *mapView;
@@ -56,7 +59,8 @@
 
 - (void)addAnnotationForAssetAndRefresh:(ALAsset *)asset
 {
-    CLLocation *location = [asset valueForProperty:ALAssetPropertyLocation];
+    FTMPAppDelegate *appDelegate = (FTMPAppDelegate *)[[UIApplication sharedApplication] delegate];
+    CLLocation *location = appDelegate.location;
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
     point.coordinate = location.coordinate;
     
